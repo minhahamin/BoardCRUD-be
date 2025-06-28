@@ -11,7 +11,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:3001', // 로컬 개발용
-      'https://your-frontend-project.vercel.app', // Vercel 프론트엔드 도메인
+      'https://board-crud-fe.vercel.app', // Vercel 프론트엔드 도메인
       /\.vercel\.app$/, // 모든 Vercel 도메인 허용
     ],
     credentials: true,
@@ -27,7 +27,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-docs', app, document);
 
-  const port = configService.get('PORT', 3000);
+  const port = configService.get<number>('PORT', 3000);
   await app.listen(port);
   console.log(`Application is running on: http://localhost:${port}`);
 }
