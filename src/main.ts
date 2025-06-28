@@ -9,7 +9,11 @@ async function bootstrap() {
 
   // CORS 설정 (프론트 주소 허용)
   app.enableCors({
-    origin: 'http://localhost:3001', // 프론트 주소
+    origin: [
+      'http://localhost:3001', // 로컬 개발용
+      'https://your-frontend-project.vercel.app', // Vercel 프론트엔드 도메인
+      /\.vercel\.app$/, // 모든 Vercel 도메인 허용
+    ],
     credentials: true,
   });
 
