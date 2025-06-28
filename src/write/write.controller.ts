@@ -1,8 +1,8 @@
 import { Controller, Post, Body, Req, UseGuards, Get, Param, ParseIntPipe, Put, Delete } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { WriteService } from './write.service';
-import { CreateWriteDto } from 'src/dto/create-write.dto';
-import { UpdateWriteDto } from 'src/dto/update-write.dto';
+import { CreateWriteDto } from '../dto/create-write.dto';
+import { UpdateWriteDto } from '../dto/update-write.dto';
 import { ApiBody, ApiOperation, ApiTags, ApiParam } from '@nestjs/swagger';
 
 @ApiTags('writes')
