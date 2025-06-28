@@ -40,7 +40,7 @@ import { WriteEntity } from './write/write.entity';
     TypeOrmModule.forFeature([UserEntity, WriteEntity]),
     UsersModule,
     WritesModule,
-    AuthModule
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
